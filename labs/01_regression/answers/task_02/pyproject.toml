@@ -1,0 +1,10 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lab_01"
+description = "A regression project"
+version = "0.1.0"
+readme = "README.md"
+# dependencies = ["PyYAML==6.0.1"]
