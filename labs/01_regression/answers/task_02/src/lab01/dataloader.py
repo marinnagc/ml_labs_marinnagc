@@ -48,3 +48,29 @@ def load_housing_data(data_dir: Path) -> pd.DataFrame:
     csv_path = data_dir / 'housing.csv'
     df = pd.read_csv(csv_path)
     return df
+
+
+def save_preprocessed_data(data: pd.DataFrame, output_dir: Path) -> None:
+    '''Saves the pre-processed California Housing Prices dataset to the output directory.
+    
+    Args:
+        data: A pandas DataFrame containing the pre-processed California Housing Prices dataset.
+        output_dir: The output directory.
+    '''
+    output_dir.mkdir(parents=True, exist_ok=True)
+    output_path = output_dir / 'preprocessed_data.csv'
+    data.to_csv(output_path, index=False)
+
+
+def load_preprocessed_data(input_dir: Path) -> pd.DataFrame:
+    '''Loads the pre-processed California Housing Prices dataset from the input directory.
+    
+    Args:
+        input_dir: The input directory.
+    
+    Returns:
+        A pandas DataFrame containing the pre-processed California Housing Prices dataset.
+    '''
+    input_path = input_dir / 'preprocessed_data.csv'
+    df = pd.read_csv(input_path)
+    return df
