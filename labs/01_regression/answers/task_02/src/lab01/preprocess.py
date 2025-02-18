@@ -34,6 +34,8 @@ def preprocess_data(data: pd.DataFrame) -> pd.DataFrame:
     data['bedrooms_per_room'] = data['total_bedrooms'] / data['total_rooms']
     data['population_per_household'] = data['population'] / data['households']
 
+    data = data.drop(columns=['total_rooms', 'total_bedrooms', 'population'])
+
     # Apply log transformation to selected features.
     scale_features = [
         'households',
