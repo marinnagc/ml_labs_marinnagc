@@ -14,5 +14,6 @@ dependencies:
   - python=3.12
   - scikit-learn
   - scipy
+  - seaborn
   - tabulate
   - yapf
